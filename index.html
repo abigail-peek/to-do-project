@@ -3,20 +3,69 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="./styles.css">
-    <title>Email Submition</title>
+    <title>List of gifts</title>
   </head>
   <body>
     <article class="content">
       <section class="user-input">
-        <input class="name" type="email" placeholder="Please enter your email">
-        <input class="submit-btn" type="submit" value="Add Email">
+        <input class="name" type="text" placeholder="What idea do you have?">
+        <input class="submit-btn" type="submit" value="Add to list">
         </section>
     <section class= "card-container">
-      <h2>List of Emails</h2>
+      <h2>Birthday gift ideas</h2>
       <!-- this is empty because we start with no user info -->
       </section>
     </article>
   </body>
+
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+p {
+  text-align: center;
+  font-size: 30px;
+  margin-top: 0px;
+}
+</style>
+</head>
+<body>
+
+<p id="demo"></p>
+
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("July 27, 2019 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  // If the count down is over, write some text
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+<p> Until Abby's birthday </p>
+
+
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script type="text/javascript" src="./index.js"></script>
